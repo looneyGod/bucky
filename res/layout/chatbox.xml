@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+	>
+    <TextView 
+        android:id="@+id/recvText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The received text will be displayed here"
+        />
+
+<LinearLayout 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" 
+    android:gravity="center"
+    >
+
+    <EditText
+        android:id="@+id/tes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/enter_text"
+        android:hint="The prev message here"
+     
+        />
+
+    <Button
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Send" />
+	<LinearLayout
+		android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:orientation="vertical"
+    	android:gravity="top"
+    	android:minWidth="10dp"
+    	android:weightSum="100"
+     >
+    		<TextView 
+    		    android:id="@+id/quoteprice"
+    		    android:text="@string/qprice"
+    		    android:background="#1AE38F"
+    		    android:layout_width="fill_parent"
+        		android:layout_height="wrap_content"
+        		android:gravity="center"
+        		android:layout_weight="20"	    
+    		    />
+    		<EditText
+        		android:id="@+id/editText1"
+        		android:layout_width="wrap_content"
+        		android:layout_height="wrap_content"
+        		android:layout_weight="80"
+        		android:ems="10"
+        		android:inputType="number"
+        		>
+        	<requestFocus />
+    		</EditText>
+   </LinearLayout>
+</LinearLayout>
+</LinearLayout>
