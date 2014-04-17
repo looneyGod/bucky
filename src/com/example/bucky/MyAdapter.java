@@ -11,25 +11,28 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MyAdapter extends ArrayAdapter<ViewHolder>{
-	ViewHolder localVH =new ViewHolder();
-	TextView tv;
-	Button bt;
-	public MyAdapter(Context context, int resource, ViewHolder v) {
+	  private final Context context;
+	  private final ViewHolder[] v;
+	public MyAdapter(Context context, int resource, ViewHolder[] v) {
 		super(context, resource); // check if third parameter is necessary 
 		// TODO Auto-generated constructor stub
-		tv=v.tv1;
-		bt=v.bt1;
+		this.v=v;
+		this.context=context;
 	}
 	@Override  
 	public View getView(int position, View convertView, ViewGroup parent) {
-		    LayoutInflater inflater = (LayoutInflater) context
-		        .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		    View rowView = inflater.inflate(R.layout.rowlayout, parent, false);
+		    //LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);// what the hell is this?
+			LayoutInflater inflater = LayoutInflater.from(getContext());
+			View rowView = inflater.inflate(R.layout.testxml, parent, false);
 		    TextView textView = (TextView) rowView.findViewById(R.id.textView1);
 		    Button butView = (Button) rowView.findViewById(R.id.button1);
-		    textView.setText(vals[position]);
+		    
+		    textView.setText(v[position].a);
+		    butView.setText(v[position].b);
+		    
+		    
 		    // change the icon for Windows and iPhone
-		    String s = vals[position];
+		    //String s = vals[position];
 
 		    return rowView;
 		  }

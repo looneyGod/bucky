@@ -1,19 +1,11 @@
 package com.example.bucky;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
-import android.widget.Toast;
+
 
 public class MessageList extends Activity {
 	
@@ -25,31 +17,29 @@ public class MessageList extends Activity {
 		EditText et2;		
 	};*/
 	static class ViewHolder{
-		TextView tv1;
-		Button bt1;
-/*		ViewHolder(TextView tv1, Button bt1)
-		{
-			this.tv1=tv1;
-			this.bt1=bt1;
-		}*/
+		String a,b;
 		ViewHolder()
 		{
-			this.tv1.setText("");
-			this.bt1.setText("");
+			this.a="khaali";
+			this.b="khaali";
 		}
 		ViewHolder(String a, String b)
 		{
-			this.tv1.setText(a);
-			this.bt1.setText(b);
+			this.a=a;
+			this.b=b;
 		}
 	};
 	
   public void onCreate(Bundle someBundle) {
     super.onCreate(someBundle);
     setContentView(R.layout.listing);
-    String[] values = new String[] { "sdfs", "iPhhfghse", "sfgsdhbb" };
+    //String[] values = new String[] { "sdfs", "iPhhfghse", "sfgbb" };
+    //ViewHolder[] vals = new ViewHolder[] { {"sdfs", "iPhhfghse"},{"adsa", "sfgbb" }};
     ListView listView= (ListView) findViewById(R.id.list);
-    ViewHolder vals= new ViewHolder("testing", "butTest");
+    ViewHolder[] vals= new ViewHolder[2];
+    vals[0]= new ViewHolder("testing", "butTest");
+    vals[1]=new ViewHolder("testing", "butTest");
+    //ViewHolder vals[1]=new ViewHolder("testing2", "butTest2");
     /*ArrayList<String> lst = new ArrayList<String>();*/
     /*lst.addAll(Arrays.asList(values));*/
     
